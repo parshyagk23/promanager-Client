@@ -21,15 +21,15 @@ function App() {
           <Route path="/" element={<RegLogPage />} />
           <Route
             path="/board"
-            element={<BordPage />}
+            element={<ProtectedRoute Component={BordPage} />}
           />
           <Route
             path="/analytics"
-            element={<AnalyticsPage />}
+            element={<ProtectedRoute Component={AnalyticsPage} />}
           />
           <Route
             path="/setting"
-            element={<SettingPage />}
+            element={<ProtectedRoute Component={SettingPage} />}
           />
           <Route
             path="/:id"

@@ -2,7 +2,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 
-const backendURL=import.meta.env.VITE_REACT_APP_AUTH_BACKEND_URL
+const backendURL=import.meta.env.VITE_REACT_APP_TASK_BACKEND_URL
 
 
 export const postTask = async ({ userId, title, priority, todos, dueDate }) => {

@@ -1,7 +1,6 @@
 import axios from "axios";
 import toast from 'react-hot-toast';
-
-const backendURL = 'https://pro-maneger-api.onrender.com';
+const backendURL=import.meta.env.VITE_REACT_APP_AUTH_BACKEND_URL
 
 export const register = async ({ name, email, password },navigate) => {
   try {

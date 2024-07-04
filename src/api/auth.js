@@ -6,10 +6,11 @@ export const register = async ({ name, email, password },navigate) => {
   try {
     const url = `${backendURL}/register`;
     const responce = await axios.post(url, { name, email, password });
+    
     if (responce.data.success) {
       localStorage.setItem("token",JSON.stringify(responce.data.token));
-      localStorage.setItem('name', JSON.stringify(responce.data.name))
-      localStorage.setItem('userId',JSON.stringify(responce.data.userId))
+      localStorage.setItem('name', JSON.stringify(responce.data.username))
+      localStorage.setItem('userId',JSON.stringify(responce.data._id))
       toast.success('Registered Successfully')
       navigate('/board')
     }
@@ -24,8 +25,8 @@ export const login = async ({ email, password },navigate) => {
       const responce = await axios.post(url, { email, password });
       if (responce) {
         localStorage.setItem("token",JSON.stringify(responce.data.token));
-        localStorage.setItem('name', JSON.stringify(responce.data.name))
-        localStorage.setItem('userId',JSON.stringify(responce.data.userId))
+        localStorage.setItem('name', JSON.stringify(responce.data.username))
+        localStorage.setItem('userId',JSON.stringify(responce.data._id))
         toast.success('Login Successfully')
         navigate('/board')
       }

@@ -15,7 +15,7 @@ export const postTask = async ({ userId, title, priority, todos, dueDate }) => {
       toast.success("Task Added Successfully");
     }
   } catch (error) {
-    console.log(error);
+    
     toast.error(error.response.data.errorMessage);
   }
 };
@@ -32,7 +32,7 @@ export const postTask = async ({ userId, title, priority, todos, dueDate }) => {
         return response;
       }
     } catch (error) {
-      console.log(error);
+      
       toast.error(error.response.data.errorMessage);
     }
   };
@@ -45,7 +45,7 @@ export const moveToBlog=async({taskId,blog})=>{
     const response = await axios.patch(url,{blog})
     return response
   } catch (error) {
-    console.log(error)
+  
     toast.error(error.response.data.errorMessage);
   }
 }
@@ -61,7 +61,7 @@ export const deleteTask = async({taskId})=>{
       toast.success('Task Deleted Successfully')
     }
   } catch (error) {
-    console.log(error)
+    
     toast.error(error.response.data.errorMessage);
   }
 }
@@ -78,7 +78,6 @@ try {
     toast.success('Task Edited Successfully')
   }
 } catch (error) {
-  console.log(error)
   toast.error(error.response.data.errorMessage);
 }
 }
@@ -91,7 +90,6 @@ export const sharedTask = async (taskId) => {
       return response.data.responce;
     }
   } catch (error) {
-    console.log(error);
     toast.error(error.response.data.errorMessage);
   }
 };
